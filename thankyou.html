@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You're In - SHIANA</title>
+<style>
+body{background:#000;color:#d4af37;font-family:sans-serif;margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px;text-align:center}
+.box{max-width:520px;width:100%;border:1px solid #d4af37;padding:40px;box-shadow:0 0 40px rgba(212,175,55,0.2)}
+h1{font-size:32px;margin:0;letter-spacing:3px}
+.h2{color:#fff;margin:15px 0;font-size:20px}
+.count{font-size:64px;font-weight:bold;margin:20px 0}
+.share{display:grid;gap:12px;margin-top:25px}
+.btn{padding:14px;text-decoration:none;font-weight:bold;border:1px solid #d4af37;display:block}
+.wa{background:#25D366;color:#000}
+.tw{background:#fff;color:#000}
+.ig{background:#d4af37;color:#000}
+.linkbox{background:#111;border:1px dashed #333;padding:12px;margin-top:20px;color:#fff;word-break:break-all;font-size:13px}
+small{color:#888;display:block;margin-top:20px}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>SHIANA</h1>
+<div class="h2">🔥 YOU'RE IN! 🔥</div>
+<p style="color:#fff">SHIANA IS COMING SOON TO THE WORLD<br>From Nigeria to the World</p>
+
+<div class="count">#<span id="num">27</span></div>
+<p style="color:#fff">You are #<span id="num2">27</span> on the waitlist!<br><b>Share to jump the queue!</b></p>
+
+<div class="linkbox" id="link">https://shiana.app/waitlist.html</div>
+
+<div class="share">
+<a class="btn wa" id="wa" href="#" target="_blank">Share on WhatsApp → Jump 10 spots</a>
+<a class="btn tw" id="tw" href="#" target="_blank">Share on X (Twitter) → Jump 5 spots</a>
+<a class="btn ig" id="copy" href="#">Copy Link → Invite Friends</a>
+</div>
+
+<small>More friends = Higher on list = Early access + Founder badge in app</small>
+<a href="/" style="color:#d4af37;margin-top:20px;display:block">← Back to Home</a>
+</div>
+
+<script>
+// Random waitlist number 18-97
+let n = Math.floor(Math.random()*80)+18;
+document.getElementById('num').innerText=n;
+document.getElementById('num2').innerText=n;
+let url = "https://shiana.app/waitlist.html";
+let text = "Shiana is coming SOON to the world! 🌍 Where memories meet places. From Nigeria to the World. Join the waitlist before launch: ";
+document.getElementById('wa').href="https://wa.me/?text="+encodeURIComponent(text+url);
+document.getElementById('tw').href="https://twitter.com/intent/tweet?text="+encodeURIComponent(text+"& "+url+" #SHIANA");
+document.getElementById('copy').onclick=(e)=>{
+e.preventDefault();
+navigator.clipboard.writeText(url);
+alert("Link copied! Share it to jump queue 🚀");
+}
+</script>
+</body>
+</html>
